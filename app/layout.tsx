@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     default: "Ahmed Naoum | Full-stack devloper",
     template: "%s | Ahmed Naoum",
   },
-  description: "a full stack developer",
+  description: "a full-stack developer",
   openGraph: {
     title: "Ahmed Naoum",
-    description: "a self-taught front-end developer",
+    description: "a full-stack developer",
     url: "",
     siteName: "Ahmed Naoum | Portfolio",
     images: [
