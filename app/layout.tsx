@@ -63,6 +63,11 @@ export default function RootLayout({
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
         <Analytics />
+        <script
+          src="https://beamanalytics.b-cdn.net/beam.min.js"
+          data-token="1c82767b-9627-493c-83cd-190d1d7fc7f2"
+          async
+        ></script>
       </head>
       <body
         className={`bg-black ${
