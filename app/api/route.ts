@@ -44,11 +44,6 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       new NextResponse(null, { status: 202 });
     }
   }
-  console.log("woork");
-  console.log(type, "woooorking");
-  const num = await redis.incr(
-    ["pageviews", type ? type : "projects", slug].join(":")
-  );
-  // console.log(num);
+  const num = await redis.incr(["pageviews", type, slug].join(":"));
   return new NextResponse(null, { status: 202 });
 }

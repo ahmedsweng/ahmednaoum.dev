@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export function ReportView({ slug, type }: { slug: string; type: string }) {
+export function ReportView({ slug, type }: { slug: string; type?: string }) {
   useEffect(() => {
     fetch(process.env.LCURL + "api/", {
       method: "POST",
