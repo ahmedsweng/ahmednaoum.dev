@@ -2,7 +2,6 @@ import "../global.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { Metadata } from "next";
-import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
@@ -59,10 +58,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const token = process.env.NEXT_PUBLIC_BEAM_TOKEN;
+  if (!token) {
+    return null;
+  }
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
-        <Analytics />
+        <script
+          src="https://beamanalytics.b-cdn.net/beam.min.js"
+          data-token={token}
+          async
+        />
       </head>
       <body
         className={`bg-black ${

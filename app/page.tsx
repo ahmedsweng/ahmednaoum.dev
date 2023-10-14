@@ -4,9 +4,9 @@ import React from "react";
 import Particles from "./components/particles";
 
 const navigation = [
-  { name: "Projects", href: "/" },
+  { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
-  { name: "Blogs", href: "/contact" },
+  { name: "Blogs", href: "/blogs" },
   {
     name: "Resume",
     href: "https://drive.google.com/file/d/1JaGscoevGYCKJLCknA-C36pZb_wKxm7N/view?usp=drive_link",
