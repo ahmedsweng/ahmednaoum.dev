@@ -3,7 +3,7 @@ import { allBlogs } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import { Header } from "./header";
 import "./mdx.css";
-import ReportView from "./view";
+import { ReportView } from "./view";
 import { Redis } from "@upstash/redis/nodejs";
 
 export const revalidate = 60;
