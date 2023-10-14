@@ -14,6 +14,8 @@ type Props = {
   };
 };
 
+const redis = Redis.fromEnv();
+
 export async function generateStaticParams(): Promise<Props["params"][]> {
   return allProjects
     .filter((p) => p.published)
@@ -21,7 +23,6 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
       slug: p.slug,
     }));
 }
-const redis = Redis.fromEnv();
 
 export default async function PostPage({ params }: Props) {
   const slug = params?.slug;
@@ -36,7 +37,7 @@ export default async function PostPage({ params }: Props) {
   // console.log(views);
   return (
     <div className="bg-zinc-50 min-h-screen">
-      <Header project={project} views={views} />
+      <Header project={project} views={views - 1} />
       <ReportView slug={project.slug} type="projects" />
 
       <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
