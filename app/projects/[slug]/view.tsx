@@ -14,6 +14,7 @@ export const ReportView: React.FC<{ slug: string; type: string }> = ({
       },
       body: JSON.stringify({ slug, type }),
     });
+    console.log('use effet')
   }, [slug]);
 
   return null;

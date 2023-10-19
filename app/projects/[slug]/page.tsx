@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { allProjects } from "contentlayer/generated";
+import { allBlogs, allProjects } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import { Header } from "./header";
 import "./mdx.css";
@@ -27,17 +27,21 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
 export default async function PostPage({ params }: Props) {
   const slug = params?.slug;
   const project = allProjects.find((project) => project.slug === slug);
-
+  // allProjects.forEach((p) => {
+  //   redis.set(["pageviews", "projects", p.slug].join(":"), 0)
+  // })
+  // allBlogs.forEach((p) => {
+  //   redis.set(["pageviews", "blogs", p.slug].join(":"), 0)
+  // })
   if (!project) {
     notFound();
   }
 
   const views =
     (await redis.get<number>(["pageviews", "projects", slug].join(":"))) ?? 0;
-  // console.log(views);
   return (
     <div className="bg-zinc-50 min-h-screen">
-      <Header project={project} views={views - 1} />
+      <Header project={project} views={views} />
       <ReportView slug={project.slug} type="projects" />
 
       <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">

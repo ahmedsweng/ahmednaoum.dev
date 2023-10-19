@@ -101,7 +101,7 @@ export default async function ProjectsPage() {
               <Card key={project.slug}>
                 <Article
                   project={project}
-                  views={views[project.slug] - 1 ?? 0}
+                  views={views[project.slug]?? 0}
                 />
               </Card>
             ))}
@@ -117,7 +117,7 @@ export default async function ProjectsPage() {
                 <Card key={project.slug}>
                   <Article
                     project={project}
-                    views={views[project.slug] - 1 ?? 0}
+                    views={views[project.slug] ?? 0}
                   />
                 </Card>
               ))}
