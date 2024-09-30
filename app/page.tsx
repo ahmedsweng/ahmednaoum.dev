@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import React from "react";
 import Particles from "./components/particles";
 
 const navigation = [
@@ -9,7 +8,7 @@ const navigation = [
   { name: "Blogs", href: "/blogs" },
   {
     name: "Resume",
-    href: "https://drive.google.com/file/d/1eyWIJ2oNK6-lTdh9Kh5ucLOdkeapQ9us/view",
+    href: "https://drive.google.com/file/d/1uivu6UJkkOHB-Pj2w3CSQmfP5eA3iDy0/view?usp=sharing",
     target: "_blank",
   },
 ];
